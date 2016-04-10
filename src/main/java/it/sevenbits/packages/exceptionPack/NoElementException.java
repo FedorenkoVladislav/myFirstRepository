@@ -1,4 +1,4 @@
-package it.sevenbits.packages.exeptionPack;
+package it.sevenbits.packages.exceptionPack;
 
  /**
  *

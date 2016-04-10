@@ -1,6 +1,6 @@
 package it.sevenbits.packages.interfacePack;
 
-import it.sevenbits.packages.exeptionPack.NoElementException;
+import it.sevenbits.packages.exceptionPack.NoElementException;
 
  /**
  * The generic interface is service of array type T.

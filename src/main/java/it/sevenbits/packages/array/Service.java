@@ -1,6 +1,6 @@
  package it.sevenbits.packages.array;
 
-import it.sevenbits.packages.exeptionPack.NoElementException;
+import it.sevenbits.packages.exceptionPack.NoElementException;
 import it.sevenbits.packages.interfacePack.IGenericServiceArray;
 
  /**

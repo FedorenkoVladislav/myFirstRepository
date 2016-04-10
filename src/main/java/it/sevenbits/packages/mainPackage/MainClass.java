@@ -2,7 +2,7 @@
 package it.sevenbits.packages.mainPackage;
 
 import it.sevenbits.packages.array.Service;
-import it.sevenbits.packages.exeptionPack.NoElementException;
+import it.sevenbits.packages.exceptionPack.NoElementException;
 import it.sevenbits.packages.array.Essence;
 
 /**
