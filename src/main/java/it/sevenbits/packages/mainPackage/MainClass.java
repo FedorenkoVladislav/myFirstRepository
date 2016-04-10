@@ -1,61 +1,75 @@
 
 package it.sevenbits.packages.mainPackage;
 
-import it.sevenbits.packages.exeptionPack.NothingException;
-import  it.sevenbits.packages.reverceArray.ReverseArray;
+import it.sevenbits.packages.array.Service;
+import it.sevenbits.packages.exeptionPack.NoElementException;
+import it.sevenbits.packages.array.Essence;
 
 /**
  * MainClass class for realize second homework.
  */
 public final class MainClass {
     /**
-     * length of array(int)
+     * length of array(int).
      */
     private static final int LENGTHOFARRAY = 10;
     /**
-     * length of array(anything)
-     */
-    private static final int SIZE = 5;
-
-    /**
-     * Default constructor
+     * Default constructor.
      */
     private MainClass() {
     }
 
     /**
-     * Main method
-     *
      * @param arg incoming argument
+     * @throws NoElementException if is empty element - print message and terminates.
      */
-    public static void main(final String[] arg) {
-        int[] myArray = new int[LENGTHOFARRAY];
-        for (int i = 0; i < myArray.length; i++) {
-            myArray[i] = i;
+    public static void main(final String[] arg) throws NoElementException {
+
+        Integer[] intArray = new Integer[LENGTHOFARRAY];
+        for (int i = 0; i < intArray.length; i++) {
+            intArray[i] = i;
         }
-        ReverseArray invertArray = new ReverseArray();
-        invertArray.reverse(myArray);
-        Object[] typeArray = new String[SIZE];
-        typeArray[0] = "Hello";
-        typeArray[1] = "Hell";
-        typeArray[2] = "Hel";
-        typeArray[3] = "exception";
-        typeArray[4] = "H";
+
+        Essence<Integer> integerEssence = new Essence<Integer>();
+        integerEssence.setOtherArray(intArray);
+
+        Service service = new Service();
+        System.out.println("The original array of INTEGER:");
+        service.printArray(integerEssence.getArray());
+        System.out.println("\nThe reverse array of INTEGER:");
+        service.printArray(service.reverseTypeArray(integerEssence.getArray()));
+
+        System.out.println("\n ---------------------------------");
+        String[] strArray = {"Java", " ", "wonderful", "programming", "language"};
+        Essence<String> stringEssence = new Essence<String>();
+        stringEssence.setOtherArray(strArray);
         try {
-            invertArray.reverseTypeArray(typeArray);
-            invertArray.print(typeArray);
-            Object[] h = new Character[SIZE];
-            h[0] = '1';
-            h[1] = '+';
-            h[2] = 'u';
-            h[3] = '*';
-            h[4] = '>';
-            invertArray.reverseTypeArray(h);
-            invertArray.print(h);
-        } catch (NothingException e) {
+            System.out.println("\nThe original array of STRING:");
+            service.printArray(stringEssence.getArray());
+            System.out.println("\nThe reverse array of STRING:");
+            service.printArray(service.reverseTypeArray(stringEssence.getArray()));
+
+        } catch (NoElementException e) {
             e.printMessage();
         } finally {
-            System.out.println("\n finally ");
+            System.out.println("finally block :insert anything in place of the empty element and try again");
+            strArray[1] = "is a";
+            System.out.println("\nThe reverse array of STRING:");
+            service.printArray(service.reverseTypeArray(stringEssence.getArray()));
+        }
+        System.out.println("\n ---------------------------------");
+        Character[] charArray = {'c', 'h', 'a', ' ', 'r'};
+        Essence<Character> characterEssence = new Essence<Character>();
+        characterEssence.setOtherArray(charArray);
+        try {
+
+            System.out.println("\nThe original array of CHAR:");
+            service.printArray(characterEssence.getArray());
+            System.out.println("\nThe reverse array of CHAR:");
+            service.printArray(service.reverseTypeArray(characterEssence.getArray()));
+
+        } catch (NoElementException e) {
+            e.printMessage();
         }
     }
 }
