@@ -15,11 +15,4 @@ public interface IGenericServiceArray {
      */
     <T> T[] reverseTypeArray(final T[] array) throws NoElementException;
 
-    /**
-     * Print array type of T.
-     * @param <T> is a type
-     * @param array array of T
-     *
-     */
-    <T> void printArray(final T[] array);
 }

@@ -8,7 +8,7 @@ import it.sevenbits.packages.array.Essence;
 /**
  * MainClass class for realize second homework.
  */
-public final class MainClass {
+ public final class MainClass {
     /**
      * length of array(int).
      */
@@ -25,49 +25,58 @@ public final class MainClass {
      */
     public static void main(final String[] arg) throws NoElementException {
 
-        Integer[] intArray = new Integer[LENGTHOFARRAY];
-        for (int i = 0; i < intArray.length; i++) {
-            intArray[i] = i;
-        }
-
-        Essence<Integer> integerEssence = new Essence<Integer>();
-        integerEssence.setOtherArray(intArray);
-
-        Service service = new Service();
-        System.out.println("The original array of INTEGER:");
-        service.printArray(integerEssence.getArray());
-        System.out.println("\nThe reverse array of INTEGER:");
-        service.printArray(service.reverseTypeArray(integerEssence.getArray()));
-
-        System.out.println("\n ---------------------------------");
-        String[] strArray = {"Java", " ", "wonderful", "programming", "language"};
-        Essence<String> stringEssence = new Essence<String>();
-        stringEssence.setOtherArray(strArray);
         try {
+            Integer[] intArray = new Integer[LENGTHOFARRAY];
+            for (int i = 0; i < intArray.length; i++) {
+                intArray[i] = i;
+            }
+
+            Essence<Integer> integerEssence = new Essence<Integer>();
+            integerEssence.setOtherArray(intArray);
+
+            Service service = new Service();
+            System.out.println("The original array of INTEGER:");
+            for (int i : integerEssence.getArray()) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+            System.out.println("\nThe reverse array of INTEGER:");
+            for (int i : service.reverseTypeArray(integerEssence.getArray())) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+            System.out.println("\n ---------------------------------");
+            String[] strArray = {"Java", "is a", "wonderful", "programming", "language"};
+            Essence<String> stringEssence = new Essence<String>();
+            stringEssence.setOtherArray(strArray);
+
             System.out.println("\nThe original array of STRING:");
-            service.printArray(stringEssence.getArray());
+            for (String s : stringEssence.getArray()) {
+                System.out.print(s + " ");
+            }
+            System.out.println();
             System.out.println("\nThe reverse array of STRING:");
-            service.printArray(service.reverseTypeArray(stringEssence.getArray()));
+            for (String s : service.reverseTypeArray(stringEssence.getArray())) {
+                System.out.print(s + " ");
+            }
+            System.out.println();
 
-        } catch (NoElementException e) {
-            e.printMessage();
-        } finally {
-            System.out.println("finally block :insert anything in place of the empty element and try again");
-            strArray[1] = "is a";
-            System.out.println("\nThe reverse array of STRING:");
-            service.printArray(service.reverseTypeArray(stringEssence.getArray()));
-        }
-        System.out.println("\n ---------------------------------");
-        Character[] charArray = {'c', 'h', 'a', ' ', 'r'};
-        Essence<Character> characterEssence = new Essence<Character>();
-        characterEssence.setOtherArray(charArray);
-        try {
+            System.out.println("\n ---------------------------------");
+            Character[] charArray = {'c', 'h', 'a', ' ', 'r'};
+            Essence<Character> characterEssence = new Essence<Character>();
+            characterEssence.setOtherArray(charArray);
+
 
             System.out.println("\nThe original array of CHAR:");
-            service.printArray(characterEssence.getArray());
+            for (Character c : characterEssence.getArray()) {
+                System.out.print(c + " ");
+            }
+            System.out.println();
             System.out.println("\nThe reverse array of CHAR:");
-            service.printArray(service.reverseTypeArray(characterEssence.getArray()));
-
+            for (Character c : service.reverseTypeArray(characterEssence.getArray())) {
+                System.out.print(c + " ");
+            }
+            System.out.println();
         } catch (NoElementException e) {
             e.printMessage();
         }

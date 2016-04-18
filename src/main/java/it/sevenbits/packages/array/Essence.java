@@ -12,7 +12,6 @@ public class Essence<T>  {
      private T[] array;
 
     /**
-     *
      * @return array
      */
      public final T[] getArray() {
@@ -20,7 +19,6 @@ public class Essence<T>  {
      }
 
     /**
-     *
      * @param otherArray new value for variable array
      */
     public final void setOtherArray(final T[] otherArray) {

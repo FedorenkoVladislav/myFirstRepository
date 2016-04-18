@@ -9,7 +9,6 @@ import it.sevenbits.packages.interfacePack.IGenericServiceArray;
 public class Service implements IGenericServiceArray {
     /**
      * Reverse array of T.
-     *
      * @param <T> is a type
      * @param array is array with elements type T
      * @throws NoElementException if is empty element print message and break
@@ -33,14 +32,4 @@ public class Service implements IGenericServiceArray {
         return array;
     }
 
-    /**
-     * Print the array of type T in the console.
-     * @param array array of T
-     * @param <T> is a type
-     */
-    public final <T> void printArray(final T[] array) {
-        for (T t : array) {
-            System.out.print(t + " ");
-        }
-    }
 }
