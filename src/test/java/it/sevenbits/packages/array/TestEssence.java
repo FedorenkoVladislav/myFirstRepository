@@ -28,7 +28,6 @@ public class TestEssence {
         String[] other = testArrayString.getArray();
         assertArrayEquals("wrong",original,other);
     }
-
     @Test
     public void testGetSetArrayChar() {
         Essence<Character> testArrayChar = new Essence<Character>();
