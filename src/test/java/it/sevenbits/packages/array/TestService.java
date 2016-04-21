@@ -21,24 +21,27 @@ public class TestService {
     @Test
     public void testReverseStringArray() throws NoElementException {
         String[] original = {"it","is","unit","test"};
-        assertArrayEquals("wrong reverse",original,reverser.reverseTypeArray(original));
+        String[] other = reverser.reverseTypeArray(original);
+        assertArrayEquals("wrong reverse",original,other);
 
     }
     @Test
     public void testReverseCharArray() throws NoElementException {
         Character[] original = {'c','h','a','r'};
-        assertArrayEquals("wrong reverse",original,reverser.reverseTypeArray(original));
-
+        Character[] other = reverser.reverseTypeArray(original);
+        assertArrayEquals("wrong reverse",original,other);
     }
     @Test
     public void testEmptyReverseStringArray() throws NoElementException {
         String[] original = null;
-        assertArrayEquals("wrong reverse",original,reverser.reverseTypeArray(original));
+        String[] other = reverser.reverseTypeArray(original);
+        assertArrayEquals("wrong reverse",original,other);
     }
     @Test
     public void testEmptyReverseCharArray() throws NoElementException {
         Character[] original = null;
-        assertArrayEquals("wrong reverse",original,reverser.reverseTypeArray(original));
+        Character[] other = reverser.reverseTypeArray(original);
+        assertArrayEquals("wrong reverse",original,other);
     }
     @Test(expected = NoElementException.class)
     public void testReverseStringArrayWithException() throws NoElementException {
