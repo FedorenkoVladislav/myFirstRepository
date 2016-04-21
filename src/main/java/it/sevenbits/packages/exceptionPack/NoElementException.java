@@ -3,11 +3,12 @@ package it.sevenbits.packages.exceptionPack;
  /**
  *
  */
-public class NoElementException extends Exception {
+public class NoElementException extends Throwable {
      /**
-      * Print a massage if there is an empty element.
+      * Print a massage if there is an empty element
+      * @param message message.
       */
-     public final void printMessage() {
-         System.out.println("EXCEPTION : Cannot invert the array: No element!");
+     public NoElementException(final String message) {
+         super(message);
      }
 }

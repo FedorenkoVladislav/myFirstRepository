@@ -20,7 +20,7 @@ public class Service implements IGenericServiceArray {
         }
         for (T tmp: array) {
             if (tmp.toString().equals(" ")) {
-                throw new NoElementException();
+                throw new NoElementException("NOTHING");
             }
         }
         for (int i = 0; i < array.length / 2; i++) {

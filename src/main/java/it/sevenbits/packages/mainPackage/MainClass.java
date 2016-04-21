@@ -46,7 +46,7 @@ import it.sevenbits.packages.array.Essence;
             }
             System.out.println();
             System.out.println("\n ---------------------------------");
-            String[] strArray = {"Java", "is a", "wonderful", "programming", "language"};
+            String[] strArray = {"Java", "is a", "wonderful", " ", "language"};
             Essence<String> stringEssence = new Essence<String>();
             stringEssence.setOtherArray(strArray);
 
@@ -62,7 +62,7 @@ import it.sevenbits.packages.array.Essence;
             System.out.println();
 
             System.out.println("\n ---------------------------------");
-            Character[] charArray = {'c', 'h', 'a', ' ', 'r'};
+            Character[] charArray = {'c', 'h', 'a', 'r'};
             Essence<Character> characterEssence = new Essence<Character>();
             characterEssence.setOtherArray(charArray);
 
@@ -78,7 +78,7 @@ import it.sevenbits.packages.array.Essence;
             }
             System.out.println();
         } catch (NoElementException e) {
-            e.printMessage();
+            System.out.println(e.getMessage());
         }
     }
 }
